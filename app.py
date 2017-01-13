@@ -18,12 +18,14 @@ def set(pin, brightness):
     current = math.ceil(pi.get_PWM_dutycycle(int(pin)))
     if current < real_brightness:
       for x in range(int(current), int(real_brightness)):
+        interval = 1 / (real_brightness - current)
         pi.set_PWM_dutycycle(int(pin), int(x))
-        time.sleep(0.1)
+        time.sleep(interval)
     else:
       for x in range(int(current), int(real_brightness), -1):
+        interval = 1 / (current - real_brightness)
         pi.set_PWM_dutycycle(int(pin), int(x))
-        time.sleep(0.1)
+        time.sleep(interval)
     pi.stop()
     return "Success"
 

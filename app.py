@@ -3,13 +3,8 @@ from flask import Flask
 import pigpio
 import math
 import time
-# import sys
 
 app = Flask(__name__)
-#pigpio
-#pi = pigpio.pi()
-#pi.set_PWM_dutycycle(int(sys.argv[1]), 0)
-#pi.stop()
 
 @app.route('/set/<int:pin>/<int:brightness>')
 def set(pin, brightness):

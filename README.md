@@ -20,10 +20,10 @@ To run the application you must first start the pigpio daemon, then the Python a
 ```
 
 ## Changing the brightness
-By default the app listens on port 80. The syntax for changing the brightness is `<ip>/set/<gpio_pin>/<brightness_percentage>`, where '<gpio_pin>' matches GPIO port the orange wire is attached to in the image above. In the case of the image, this is 14.
+By default the app listens on port 5000. The syntax for changing the brightness is `<ip>/set/<gpio_pin>/<brightness_percentage>`, where '<gpio_pin>' matches GPIO port the orange wire is attached to in the image above. In the case of the image, this is 14.
 
 You can either access the link via your web browser, or on the command line using a tool like cURL:
 ```
-$ curl localhost/set/14/50
+$ curl localhost:5000/set/14/50
 ```
 The above example will set an LED tape attached to GPIO port 14 to 50% brightness.

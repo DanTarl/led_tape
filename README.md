@@ -16,7 +16,7 @@ To run the application you must first start the pigpio daemon, then the Python a
 ```
 ~ $ cd led_tape
 ~/led_tape $ sudo pigpiod
-~/led_tape $ sudo python app.py
+~/led_tape $ sudo python app.py <gpio_pin>
 ```
 
 ## Changing the brightness

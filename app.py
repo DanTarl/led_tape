@@ -1,10 +1,13 @@
 #!flask/bin/python
 from flask import Flask
 import pigpio
+import sys
 import math
 import time
 
 app = Flask(__name__)
+pi = pigpio.pi()
+pi.set_PWM_dutycycle(int(sys.argv[1]), int(0))
 
 @app.route('/set/<int:pin>/<int:brightness>')
 def set(pin, brightness):
